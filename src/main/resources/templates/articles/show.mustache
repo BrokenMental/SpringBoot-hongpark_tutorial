@@ -1,0 +1,22 @@
+{{>layouts/header}}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">content</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- model에 등록된 데이터는 #을 통해서 가져올 수 있음 -->
+        {{#article}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+        </tr>
+        <!-- #으로 가져온 데이터를 어디까지 쓸 것인지 / 으로 지정해줘야 함 -->
+        {{/article}}
+    </tbody>
+</table>
+{{>layouts/footer}}
