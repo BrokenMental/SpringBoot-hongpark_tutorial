@@ -11,6 +11,7 @@ import lombok.ToString;
 @Entity //DB가 해당 객체를 인식할 수 있음
 @AllArgsConstructor
 @NoArgsConstructor //디폴트 생성자를 추가
+
 @ToString
 public class Article {
 
@@ -23,4 +24,28 @@ public class Article {
 
     @Column
     private String content;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }

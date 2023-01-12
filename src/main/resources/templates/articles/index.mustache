@@ -1,0 +1,22 @@
+{{>layouts/header}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">title</th>
+        <th scope="col">content</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- 리스트와 같이 여러개의 row 를 갖는 경우 해당 row 의 값을 반복 함 -->
+    {{#articleList}}
+        <tr>
+            <td>{{id}}</td>
+            <td><a href="/articles/{{id}}">{{title}}</a></td>
+            <td>{{content}}</td>
+        </tr>
+    {{/articleList}}
+    </tbody>
+</table>
+<a href="/articles/new">New Articles</a>
+{{>layouts/footer}}
