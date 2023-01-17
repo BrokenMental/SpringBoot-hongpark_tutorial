@@ -43,3 +43,10 @@
     </div>
   </div>
 </nav>
+<!-- msg 라는 데이터가 존재한다면 아래 div element 를 출력, model 이 아닌 redirectAttribute 처럼 attribute 에 담긴 데이터를 가져올 수 있음 -->
+{{#msg}}
+    <div class="alert alert-primary alert-dismissible">
+        {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/msg}}
