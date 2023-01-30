@@ -5,15 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Entity //DB가 해당 객체를 인식할 수 있음
 @AllArgsConstructor
 @NoArgsConstructor //디폴트 생성자를 추가
 @ToString
+@Entity //DB가 해당 객체를 인식할 수 있음
 public class Article {
 
     @Id //primary
     //@GeneratedValue //auto_increment(warning : will duplicate idx)
     @GeneratedValue(strategy = GenerationType.IDENTITY) //DB auto make idx
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column
