@@ -6,12 +6,14 @@ import com.example.firstproject.entity.Comment;
 import com.example.firstproject.repository.ArticleRepository;
 import com.example.firstproject.repository.CommentRepository;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class CommentService {
     @Autowired
@@ -41,6 +43,11 @@ public class CommentService {
 
     @Transactional
     public CommentDto create(Long articleId, CommentDto dto) {
+        /*
+        log.info("입력값 => {}", articleId);
+        log.info("입력값 => {}", dto);
+        */
+
         //예외 발생
         Article article = articleRepository.findById(articleId)
                 .orElseThrow(() -> new IllegalArgumentException("댓글 생성 실패! 대상 게시글이 없음."));
@@ -50,6 +57,11 @@ public class CommentService {
         Comment created = commentRepository.save(comment);
 
         return CommentDto.createCommentDto(created);
+        /*
+        CommentDto createDto = CommentDto.createCommentDto(created);
+        log.info("반환값 => {}", createDto);
+        return createDto;
+        */
     }
 
     @Transactional
