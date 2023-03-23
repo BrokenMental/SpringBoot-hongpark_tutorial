@@ -14,8 +14,9 @@ import org.springframework.stereotype.Component;
 public class DebuggingAspect {
 
     //특정 타겟을 지정해서 그 안에 부가 기능을 주입할 것인지 지정
-    @Pointcut("execution(* com.example.firstproject.service.CommentService.*(..))") //CommentService 의 모든 메소드가 실행될 때
-    //@Pointcut("execution(* com.example.firstproject.service.CommentService.create(..))") //CommentService 의 create가 실행될 때 만
+    @Pointcut("execution(* com.example.firstproject.api.*.*(..))") //api 패키지의 모든 메소드
+    //@Pointcut("execution(* com.example.firstproject.service.CommentService.*(..))") //CommentService 의 모든 메소드가 실행될 때
+    //@Pointcut("execution(* com.example.firstproject.service.CommentService.create(..))") //CommentService 의 create 가 실행될 때 만
     private void cut() {
 
     }
